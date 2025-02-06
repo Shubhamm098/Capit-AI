@@ -1,0 +1,43 @@
+.landing {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.hero, .features, .benefits, .testimonials, .cta {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero {
+  background-color: #f0f8ff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+/* Add more specific styles for other sections as needed */

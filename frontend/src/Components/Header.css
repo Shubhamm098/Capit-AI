@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #0d0c1f;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0.8rem 0rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header:hover {
+  /* Optional: Add hover effect if needed */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem; /* Reduced from 2.5rem */
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem; /* Reduced from 1.1rem */
+  font-weight: 500;
+  padding: 0.4rem 0.6rem; /* Slightly reduced padding */
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px; /* Slightly reduced to match smaller size */
+}
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #39158e;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.menu a:hover::before,
+.menu a.active::before {
+  transform: scale(1);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.75rem; /* Reduced from 1rem */
+  margin-left: auto;
+}
+
+.btn {
+  padding: 0.5rem 1rem; /* Slightly reduced padding */
+  font-size: 0.9rem; /* Reduced from 1rem */
+  font-weight: 600;
+  border: none;
+  border-radius: 20px; /* Adjusted to maintain proportion */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.4s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-login {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-signup {
+  background-color: white;
+  color: #39158e;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    gap: 1rem; /* Further reduced for smaller screens */
+  }
+
+  .menu {
+    gap: 1rem; /* Further reduced for smaller screens */
+  }
+
+  .logo {
+    width: 180px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    gap: 1rem;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(57, 21, 142, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    clip-path: circle(0% at top right);
+    transition: clip-path 0.5s ease-in-out;
+  }
+
+  .nav-open {
+    clip-path: circle(150% at top right);
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .logo {
+    width: 150px;
+    height: 50px;
+  }
+}

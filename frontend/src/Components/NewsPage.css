@@ -1,0 +1,50 @@
+.news-page {
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  margin-top: 80px; /* Add space for header */
+}
+
+.news-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #f8fafc;
+}
+
+.news-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.news-header .subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.news-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ... rest of the styles from FinancialNews.css ... */ 
