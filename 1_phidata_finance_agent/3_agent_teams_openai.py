@@ -8,11 +8,17 @@ load_dotenv()
 
 web_agent = Agent(
     name="Web Agent",
+    role="Search the web for information",
     model=Groq(id="llama-3.3-70b-versatile"),
     tools=[DuckDuckGo()],
-    instructions=["Always include sources"],
+    instructions=[
+        "Always include sources",
+        "Provide concise and relevant information",
+        "Break down complex queries into smaller searches"
+    ],
     show_tool_calls=True,
-    markdown=True
+    markdown=True,
+    debug_mode=True,  # Enable debug mode to see what's happening
 )
 
 finance_agent = Agent(
@@ -40,7 +46,8 @@ tax_agent = Agent(
 agent_team = Agent(
     model=Groq(id="llama-3.3-70b-versatile"),
     team=[web_agent, finance_agent, tax_agent],
-    instructions=["Always include sources", "Use tables to display data"],
+    instructions=["Always include sources", "Use tables to display data",
+                  ],
     show_tool_calls=True,
     markdown=True,
 )
