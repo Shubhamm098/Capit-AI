@@ -40,11 +40,11 @@ function App() {
             <>
               <HeroSection/>
               <ServicesSection/>
-              <HomeNewsSection/> {/* Use the home page news section */}
+              {/* <HomeNewsSection/>  */}
               <FAQSection/>
               <AboutUsSection/>
               <Footer/>
-              <MutualFund/>
+              {/* <MutualFund/> */}
             </>
           } />
           <Route path="/tax-optimization" element={<TaxOptimization />} />

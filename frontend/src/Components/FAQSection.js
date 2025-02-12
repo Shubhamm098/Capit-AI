@@ -41,7 +41,7 @@ const FAQSection = () => {
       <div className='newsy'>
         <h2>Whats new in the Market !!</h2>
       <div className="empty-div">
-        <FinancialNews /> {/* Render the FinancialNews component here */}
+        {/* <FinancialNews /> Render the FinancialNews component here */}
       </div>
       </div>
      
