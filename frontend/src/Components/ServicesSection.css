@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap'); /* Importing a new font */
+
+.services {
+ background-color: #0d0c1f ;
+  padding: 6rem 2rem;
+  padding-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.services h2 {
+  font-family: 'Roboto', sans-serif; /* Change to the new font */
+  font-size: 2.5rem; /* Reduced font size */
+  font-weight: 700; /* Adjusted font weight */
+  color: #ffffff; /* Keep color white */
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  position: relative;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.services h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #2ecc40;
+  margin: 20px auto 0;
+}
+
+.services h2:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.service-carousel {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  gap: 2rem;
+}
+
+.card {
+  flex: 0 0 calc(33.333% - 1.333rem);
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.content {
+  padding: 1.1rem;
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  background-color: #0c1e4f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #39158e, #4a00e0);
+  opacity: 0.1;
+}
+
+.animated-icon {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-icon svg {
+  width: 80px;
+  height: 80px;
+}
+
+.animated-icon path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 2s linear forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.card:hover .animated-icon path {
+  animation: draw 2s linear forwards, pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.title {
+  color: #111827;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+
+.desc {
+  margin-top: 0.5rem;
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.action {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #2ecc40;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.action span {
+  transition: .3s ease;
+}
+
+.action:hover span {
+  transform: translateX(4px);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(74, 0, 224, 0.8);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-button:hover {
+  background-color: rgba(74, 0, 224, 1);
+  box-shadow: 0 0 15px rgba(74, 0, 224, 0.5);
+}
+
+.carousel-button.prev {
+  left: -30px;
+}
+
+.carousel-button.next {
+  right: -30px;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1rem;
+  }
+
+  .card {
+    flex: 0 0 calc(100% - 1rem);
+  }
+
+  .carousel-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}

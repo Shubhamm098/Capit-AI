@@ -1,0 +1,131 @@
+.tax-optimization-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #0d0c1f; /* Light background for the container */
+  min-height: 100vh; /* Full height for the page */
+  margin-top: 100px; /* Added margin-top of 100px */
+}
+
+.tab-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Space below the tab header */
+}
+
+.tab-button {
+  background-color: #ffffff; /* White background for tabs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0.75rem 1.5rem; /* Padding for tabs */
+  margin: 0 0.5rem; /* Space between tabs */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  color: #28a745 ;
+}
+
+.tab-button:hover {
+  background-color: #e0e0e0; /* Light gray on hover */
+}
+
+.tab-button.active {
+  background-color: #28a745; /* Active tab color */
+  color: white; /* Text color for active tab */
+}
+
+.tax-optimization-card {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2); /* Enhanced shadow */
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px; /* Limit the width */
+  margin: 1rem 0; /* Space around the card */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.tax-optimization-card:hover {
+  background-color: #f0f8ff; /* Light background on hover */
+  transform: scale(1.02); /* Slight lift effect on hover */
+}
+
+.title {
+  font-size: 2rem; /* Title font size */
+  color: #4a00e0; /* Title color */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+/* Input group styles */
+.input-group {
+  display: grid; /* Use grid for two-column layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1rem; /* Space between input fields */
+}
+
+input[type="number"],
+select {
+  padding: 0.75rem;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #28a745; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Glow effect on focus */
+}
+
+.calculate-button {
+  background-color: #28a745; /* Green button color */
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 7px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  width: 200px; /* Limit the width of the button */
+  margin-top: 1rem; /* Space above button */
+}
+
+.calculate-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Results styles */
+.results {
+  background-color: #f0f8ff; /* Light background for results */
+  padding: 1.5rem; /* Padding for results */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 1.5rem; /* Space above results */
+}
+
+.results-title {
+  font-size: 1.5rem; /* Font size for results title */
+  color: #1e3a8a; /* Dark blue color */
+  margin-bottom: 0.5rem; /* Space below the title */
+}
+
+.tax-result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tax-result h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tax-result p {
+  margin: 8px 0;
+  font-size: 16px;
+}

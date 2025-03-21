@@ -1,0 +1,19 @@
+.founders {
+  background-color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.founders h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.founders p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
