@@ -2,17 +2,17 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 300px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: height 0.3s ease;
   display: flex;
   flex-direction: column;
   z-index: 1000;
   overflow: hidden;
   border: 1px solid #ccc;
-  max-height: 500px;
+  min-width: 300px;
+  min-height: 60px; /* Show at least the header when closed */
 }
 
 .chatbot-header {
@@ -29,15 +29,16 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  max-height: 400px;
-  overflow-y: auto;
+  overflow: hidden;
+  position: relative; /* For absolute positioning of resize handle */
+  height: calc(100% - 50px); /* Adjust based on header height */
 }
 
 .messages {
   flex-grow: 1;
   margin-bottom: 10px;
-  max-height: 400px;
   overflow-y: auto;
+  max-height: calc(100% - 60px); /* Leave room for input */
 }
 
 .user {
@@ -88,6 +89,19 @@ button:hover {
 }
 
 .open {
-  height: 400px;
+  min-height: 400px;
+  /* Remove display:flex as it's already in .chatbot base class */
+}
+
+.resize-handle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 5px;
+  left: 5px;
+  cursor: nesw-resize;
+  background-image: linear-gradient(45deg, #008CBA 0%, #008CBA 50%, transparent 50%);
+  border-bottom-left-radius: 5px;
+  z-index: 10;
 }
 

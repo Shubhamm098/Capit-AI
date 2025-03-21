@@ -111,3 +111,21 @@ select:focus {
   color: #1e3a8a; /* Dark blue color */
   margin-bottom: 0.5rem; /* Space below the title */
 }
+
+.tax-result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tax-result h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.tax-result p {
+  margin: 8px 0;
+  font-size: 16px;
+}
