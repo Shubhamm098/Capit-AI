@@ -11,38 +11,49 @@
 .tab-header {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem; /* Space below the tab header */
+  margin-bottom: 2rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
 }
 
 .tab-button {
-  background-color: #ffffff; /* White background for tabs */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 0.75rem 1.5rem; /* Padding for tabs */
-  margin: 0 0.5rem; /* Space between tabs */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-  color: #28a745 ;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .tab-button:hover {
-  background-color: #e0e0e0; /* Light gray on hover */
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .tab-button.active {
-  background-color: #28a745; /* Active tab color */
-  color: white; /* Text color for active tab */
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
 }
 
 .tax-optimization-card {
-  background-color: #ffffff; /* White background for the card */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.2); /* Enhanced shadow */
-  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 2.5rem;
   width: 100%;
-  max-width: 600px; /* Limit the width */
-  margin: 1rem 0; /* Space around the card */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  max-width: 800px;
+  margin: 1rem auto;
+  transition: transform 0.3s ease;
 }
 
 .tax-optimization-card:hover {
@@ -51,81 +62,520 @@
 }
 
 .title {
-  font-size: 2rem; /* Title font size */
-  color: #4a00e0; /* Title color */
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Space between icon and text */
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
 }
 
-/* Input group styles */
-.input-group {
-  display: grid; /* Use grid for two-column layout */
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  gap: 1rem; /* Space between input fields */
+/* Form Styles */
+form {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-y-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: #4a5568;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 input[type="number"],
 select {
-  padding: 0.75rem;
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Font size */
-  transition: border-color 0.3s ease; /* Smooth border color transition */
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+  color: #1a1a1a;
 }
 
 input[type="number"]:focus,
 select:focus {
-  border-color: #28a745; /* Change border color on focus */
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Glow effect on focus */
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
+  background-color: #ffffff;
 }
 
+input[type="number"]::placeholder {
+  color: #a0aec0;
+}
+
+/* Button Styles */
+button[type="submit"],
 .calculate-button {
-  background-color: #28a745; /* Green button color */
+  width: 100%;
+  padding: 1rem;
+  background-color: #28a745;
   color: white;
-  padding: 0.75rem;
   border: none;
-  border-radius: 7px; /* Rounded corners */
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition */
-  width: 200px; /* Limit the width of the button */
-  margin-top: 1rem; /* Space above button */
-}
-
-.calculate-button:hover {
-  background-color: #218838; /* Darker green on hover */
-}
-
-/* Results styles */
-.results {
-  background-color: #f0f8ff; /* Light background for results */
-  padding: 1.5rem; /* Padding for results */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-top: 1.5rem; /* Space above results */
-}
-
-.results-title {
-  font-size: 1.5rem; /* Font size for results title */
-  color: #1e3a8a; /* Dark blue color */
-  margin-bottom: 0.5rem; /* Space below the title */
-}
-
-.tax-result {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
 }
 
-.tax-result h2 {
-  margin-bottom: 15px;
-  color: #333;
+button[type="submit"]:hover,
+.calculate-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
 }
 
-.tax-result p {
-  margin: 8px 0;
-  font-size: 16px;
+button[type="submit"]:disabled,
+.calculate-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Results Styles */
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.space-y-6 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bg-blue-50,
+.bg-green-50,
+.bg-yellow-50,
+.bg-purple-50 {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bg-blue-50 { background-color: #eff6ff; }
+.bg-green-50 { background-color: #f0fdf4; }
+.bg-yellow-50 { background-color: #fefce8; }
+.bg-purple-50 { background-color: #faf5ff; }
+
+.text-xl {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.list-disc li {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tax-optimization-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tax-optimization-card {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Updated Recommendations Styles */
+.recommendation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  background-color: #e6f4ea;
+  color: #28a745;
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.recommendation-item:hover .recommendation-icon {
+  background-color: #28a745;
+  color: white;
+  transform: scale(1.1);
+}
+
+.investment-highlight {
+  background-color: #f0fdf4;
+  border-color: #28a745;
+  border-width: 2px;
+}
+
+.investment-highlight .recommendation-icon {
+  background-color: #28a745;
+  color: white;
+}
+
+.investment-highlight .recommendation-content {
+  color: #166534;
+  font-weight: 500;
+}
+
+.savings-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #dcfce7;
+}
+
+.savings-title {
+  color: #166534;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.savings-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.savings-info p {
+  color: #166534;
+  font-size: 0.95rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #dcfce7;
+  transition: all 0.2s ease;
+}
+
+.savings-info p:hover {
+  transform: translateX(4px);
+  border-color: #28a745;
+}
+
+.savings-info svg {
+  font-size: 1.25rem;
+  color: #28a745;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .savings-info {
+    padding: 1rem;
+  }
+
+  .savings-info p {
+    font-size: 0.875rem;
+    padding: 0.625rem;
+  }
+}
+
+.recommendations-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.recommendations-title {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.recommendations-list {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recommendation-item:hover {
+  background-color: #f0f9ff;
+  border-color: #e2e8f0;
+}
+
+.recommendation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #28a745;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.recommendation-content {
+  flex: 1;
+  color: #4a5568;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.recommendation-highlight {
+  color: #28a745;
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+/* Investment Amount Cards */
+.investment-highlight {
+  background-color: #28a745;
+  color: white;
+  padding: 1.25rem;
+  border-radius: 16px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.investment-highlight .recommendation-icon {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.investment-highlight .recommendation-content {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Potential Investment Opportunities Section */
+.potential-investments {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: 12px;
+}
+
+.potential-investments-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #166534;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.potential-investments-title svg {
+  color: #28a745;
+}
+
+.potential-investments-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.potential-investments-item:not(:first-child) {
+  margin-top: 0.75rem;
+}
+
+.potential-investments-icon {
+  color: #28a745;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.potential-investments-content {
+  color: #166534;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Investment Suggestions */
+.investment-suggestion {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 32px;
+  border: 1px solid #28a745;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.investment-suggestion:hover {
+  transform: none;
+  border-color: #28a745;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.05);
+}
+
+.investment-suggestion .suggestion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #28a745;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.investment-suggestion .suggestion-content {
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Remove unused styles */
+.investment-highlight,
+.potential-investments,
+.potential-investments-title,
+.potential-investments-item,
+.potential-investments-icon,
+.potential-investments-content,
+.savings-info,
+.savings-title,
+.savings-details {
+  display: none;
+}
+
+/* Recommendation Title Styles */
+.recommendation-title {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.recommendation-description {
+  color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .recommendations-list {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tax-optimization-card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .recommendations-list {
+    max-width: 100%;
+  }
+  
+  .investment-suggestion {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .investment-suggestion .suggestion-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .suggestion-content {
+    font-size: 0.875rem;
+  }
 }
